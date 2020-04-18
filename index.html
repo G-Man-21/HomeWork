@@ -10,24 +10,160 @@
 
     
 <script>
-    let money = prompt("Ваш бюджет на месяц?"),
-        timeData = prompt("Введите дату в формате YYYY-MM-DD"),
-        a = prompt("Введите обязательную статью расходов в этом месяце"),
+    // let money = prompt("Ваш бюджет на месяц?"),
+    //     timeData = prompt("Введите дату в формате YYYY-MM-DD"),
+    //     a = prompt("Введите обязательную статью расходов в этом месяце"),
+    //     b = prompt("Во сколько обойдется?");
+
+    // let appData = {
+    //     money: money,
+    //     timeData: timeData,
+    //     expenses: {
+    //         a: a,
+    //         b: b
+    //     },
+    //     optionalExpenses: {},
+    //     income: [],
+    //     savings: false
+    // }
+
+    // alert(appData.money/30);
+
+
+
+
+
+
+
+
+    // (num == 50) ? console.log('Right!') : console.log('Wrong!');
+
+    // switch (num) {
+    //     case num < 49:
+    //         console.log('!');
+    //         break;
+    //     case num > 100:
+    //         console.log("!");
+    //         break;
+    //     case 50:
+    //         console.log("right!");
+    //         break;
+    //     default: 
+    //         console.log("Что то пошло не так!");
+    //         break;
+    // }
+
+    // let num = 50;
+
+    // while (num < 55) {
+    //     console.log(num);
+    //     num++;
+    // }
+
+    // do {
+    //     console.log(num);
+    //     num++;
+    // } while (num < 55)
+
+    // for (let i = 0; i < 10; i++) {
+    //     num++;
+
+    //     if (i == 6) {
+    //         continue
+    //     }
+
+    //     console.log(i);
+    // }
+
+
+/* Home Work */
+
+let money = +prompt("Ваш бюджет на месяц?",""),
+    time = prompt("Введите дату в формате YYYY-MM-DD", "");
+
+let appData = {
+    budget: money,
+    timeData: time,
+    expenses: {},
+    optionalExpenses: {},
+    income: [],
+    savings: false
+}
+
+
+// for -------------------------
+for (let i = 0; i < 2; i++) {
+    let a = prompt("Введите обязательную статью расходов в этом месяце", ""),
         b = prompt("Во сколько обойдется?");
 
-    let appData = {
-        money: money,
-        timeData: timeData,
-        expenses: {
-            a: a,
-            b: b
-        },
-        optionalExpenses: {},
-        income: [],
-        savings: false
-    }
+    if ( (typeof(a)) === 'string' && (typeof(a)) != null && (typeof(b)) != null
+        && a != '' && b != '' && a.length < 50) {
+        console.log("done");
+        appData.expenses[a] = b;
+    } else {
+        alert('Попробуйте еще раз');
+        i--;
+    } 
+}
 
-    alert(appData.money/30);
+
+
+// // Do While ---------------------
+// let i = 0;
+// do {
+//     let a = prompt("Введите обязательную статью расходов в этом месяце", ""),
+//         b = prompt("Во сколько обойдется?");
+
+//     if ( (typeof(a)) === 'string' && (typeof(a)) != null && (typeof(b)) != null
+//         && a != '' && b != '' && a.length < 50) {
+//         console.log("done");
+//         appData.expenses[a] = b;
+//     } else {
+//         alert('Попробуйте еще раз');
+//         i--;
+//     } 
+
+//     i++;
+// } while (i < 2);
+
+
+// // While -------------------------
+// while (i < 2) {
+//     let a = prompt("Введите обязательную статью расходов в этом месяце", ""),
+//         b = prompt("Во сколько обойдется?");
+
+//     if ( (typeof(a)) === 'string' && (typeof(a)) != null && (typeof(b)) != null
+//         && a != '' && b != '' && a.length < 50) {
+//         console.log("done");
+//         appData.expenses[a] = b;
+//     } else {
+//         alert('Попробуйте еще раз');
+//         i--;
+//     } 
+//     i++;
+// }
+
+
+
+appData.moneyPerDay = appData.budget / 30;
+
+alert("Ежедневный бюждет: " + appData.moneyPerDay);
+
+alert(appData.budjet / 30);
+
+if (appData.moneyPerDay < 100) {
+    console.log("Минимальный уровень достатка");
+} else if (appData.moneyPerDay > 100 && appData.moneyPerDay < 2000) {
+    console.log("Средний уровень достатка");
+} else if (appData.moneyPerDay > 2000) {
+    console.log("Высокий уровень достатка");
+} else {
+    console.log("Произошла ошибка");
+}
+
+console.log(appData);
+
+
 
 </script>
 </body>
