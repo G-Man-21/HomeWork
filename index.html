@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Udemy JS</title>
 </head>
 <body>
     
@@ -76,92 +76,189 @@
     // }
 
 
-/* Home Work */
-
-let money = +prompt("Ваш бюджет на месяц?",""),
-    time = prompt("Введите дату в формате YYYY-MM-DD", "");
-
-let appData = {
-    budget: money,
-    timeData: time,
-    expenses: {},
-    optionalExpenses: {},
-    income: [],
-    savings: false
-}
-
-
-// for -------------------------
-for (let i = 0; i < 2; i++) {
-    let a = prompt("Введите обязательную статью расходов в этом месяце", ""),
-        b = prompt("Во сколько обойдется?");
-
-    if ( (typeof(a)) === 'string' && (typeof(a)) != null && (typeof(b)) != null
-        && a != '' && b != '' && a.length < 50) {
-        console.log("done");
-        appData.expenses[a] = b;
-    } else {
-        alert('Попробуйте еще раз');
-        i--;
-    } 
-}
 
 
 
-// // Do While ---------------------
-// let i = 0;
-// do {
-//     let a = prompt("Введите обязательную статью расходов в этом месяце", ""),
-//         b = prompt("Во сколько обойдется?");
 
-//     if ( (typeof(a)) === 'string' && (typeof(a)) != null && (typeof(b)) != null
-//         && a != '' && b != '' && a.length < 50) {
-//         console.log("done");
-//         appData.expenses[a] = b;
-//     } else {
-//         alert('Попробуйте еще раз');
-//         i--;
-//     } 
-
-//     i++;
-// } while (i < 2);
+// // function  --------------------------------
+// let num = 20;
 
 
-// // While -------------------------
-// while (i < 2) {
-//     let a = prompt("Введите обязательную статью расходов в этом месяце", ""),
-//         b = prompt("Во сколько обойдется?");
+// function showFirstMessage(text) {
+//     alert(text);
+//     let num = 10;
+//     console.log(num);
+// }
 
-//     if ( (typeof(a)) === 'string' && (typeof(a)) != null && (typeof(b)) != null
-//         && a != '' && b != '' && a.length < 50) {
-//         console.log("done");
-//         appData.expenses[a] = b;
-//     } else {
-//         alert('Попробуйте еще раз');
-//         i--;
-//     } 
-//     i++;
+// showFirstMessage("Hello World!");
+// console.log(num);
+
+
+
+// let calc = function(a,b) {
+//     return (a+b);
+// };
+
+// let calc = (a,b) => a+b
+
+// console.log(calc(3,4));
+// console.log(calc(8,4));
+
+
+// function retVar() {
+//     let num = 50;
+//     return num;
 // }
 
 
+// let anotherNum = retVar();
+// console.log(anotherNum);
 
-appData.moneyPerDay = appData.budget / 30;
 
-alert("Ежедневный бюждет: " + appData.moneyPerDay);
+// let str = "test";
+// console.log(str.length);
 
-alert(appData.budjet / 30);
+// console.log(str.toUpperCase());
+// console.log(str.toLowerCase());
 
-if (appData.moneyPerDay < 100) {
-    console.log("Минимальный уровень достатка");
-} else if (appData.moneyPerDay > 100 && appData.moneyPerDay < 2000) {
-    console.log("Средний уровень достатка");
-} else if (appData.moneyPerDay > 2000) {
-    console.log("Высокий уровень достатка");
-} else {
-    console.log("Произошла ошибка");
-}
 
-console.log(appData);
+// let twelve = "12.2px";
+
+// console.log(Math.round(twelve));  // округляет
+// console.log(parseInt(twelve));
+// console.log(parseFloat(twelve));
+
+
+
+
+// пример замыкания --------------------------- ПОВТОРИ
+
+// let val = 7
+// function createAdder(n,d) {
+//     function addNumbers(a, b) {
+//         let ret = a + b
+//         return ret
+//     }
+//     console.log(n + d);
+//     return addNumbers
+// }
+
+// let adder = createAdder(2,2);
+// let sum = adder(val, 8);
+
+// console.log('example of function returning a function: ', sum);
+
+
+
+
+
+// function createCounter() {
+//   let counter = 0
+//   const myFunction = function() {
+//     counter = counter + 1
+//     return counter
+//   }
+//   return myFunction
+// }
+// const increment = createCounter()
+// const c1 = increment()
+// const c2 = increment()
+// const c3 = increment()
+// console.log('example increment', c1, c2, c3);
+
+
+
+
+// function Counter() {
+//     let count = 0;
+    
+//     return function() {
+//         count++;
+
+//         return count;
+//     }
+// }
+
+// let counter = Counter();
+
+// console.log(counter()); // 1
+// console.log(counter()); // 2
+// console.log(counter()); // 3
+
+// let anotherCounter = Counter();
+
+// console.log(anotherCounter()); // 1
+// console.log(anotherCounter()); // 2
+// console.log(anotherCounter()); // 3
+
+
+
+
+// function createIncrementor(n) {
+//     return function(num) {
+//         return n + num
+//     }
+// }
+
+// const addOne = createIncrementor(1);
+// const addTen = createIncrementor(10);
+
+// console.log(addOne(10));  // 11
+// console.log(addOne(41));  // 42
+
+// console.log(addTen(10));  // 20 
+// console.log(addTen(41));  // 51
+
+
+
+
+// function urlGenerator(domain) {
+//     return function(url) {
+//         return `https://${url}.${domain}`
+//     }
+// }
+
+// const comUrl = urlGenerator("com");
+// const ruUrl = urlGenerator("ru");
+
+// console.log(comUrl('google'));
+// console.log(comUrl('netflix'));
+
+// console.log(ruUrl('yandes'));
+// console.log(ruUrl('vk'));
+
+
+
+
+// function bind(cont1) {
+//     function logPerson() {
+//       console.log(`person: ${cont1.name}, ${cont1.age}, ${cont1.job}`); 
+//     }
+//     return logPerson();
+// }
+
+// const person1 = {name:'Михаил', age: 22, job: 'Frontend'};
+// const person2 = {name:'Dmitry', age: 43, job: 'Frontend'};
+
+// bind(person1);
+// bind(person2);
+
+
+
+
+// function cs2() {
+//   let c = 0;
+//   return function() {
+//     c++;
+//     console.log(c);
+//   }
+// }
+
+// let d = cs2(); // d - функция
+
+
+
+
 
 
 
