@@ -3,77 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="original.css">
     <title>Udemy JS</title>
 </head>
 <body>
     
+<div class="box" id="box"></div>
+<button>1</button>
+<button>2</button>
+<button>3</button>
+<button>4</button>
+<button>5</button>
 
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+
+<div class="wrapper">
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+</div>
     
+
 <script>
-    // let money = prompt("Ваш бюджет на месяц?"),
-    //     timeData = prompt("Введите дату в формате YYYY-MM-DD"),
-    //     a = prompt("Введите обязательную статью расходов в этом месяце"),
-    //     b = prompt("Во сколько обойдется?");
 
-    // let appData = {
-    //     money: money,
-    //     timeData: timeData,
-    //     expenses: {
-    //         a: a,
-    //         b: b
-    //     },
-    //     optionalExpenses: {},
-    //     income: [],
-    //     savings: false
-    // }
-
-    // alert(appData.money/30);
+//  ПОЛУЧЕНИЕ ЭЛЕМЕНТОВ СО СТРАНИЦЫ DOM    --------------------------------
+let box = document.getElementById('box'),
+    btn = document.getElementsByTagName('button'),
+    circle = document.getElementsByClassName('circle'),
+    heart = document.querySelectorAll('.heart'),
+    oneHeart = document.querySelector('.heart'),
+    wrapper = document.querySelector('.wrapper');
 
 
 
+box.style.backgroundColor = 'blue';
+btn[1].style.borderRadius = '100%';
+
+circle[0].style.backgroundColor = 'red';
+circle[1].style.backgroundColor = 'yellow';
+circle[2].style.backgroundColor = 'green';
+
+// for (let i = 0; i < heart.length; i++) {
+//     heart[i].style.backgroundColor = 'blue';
+// }
+
+// heart.forEach(function(item, i, array){
+//     item.style.backgroundColor = 'blue';
+// });
+
+let div = document.createElement('div'),
+    text = document.createTextNode('Тут был я');
+
+div.classList.add('black');
+
+// document.body.appendChild(div);   // добавить элемент в конец /body
+// wrapper.appendChild(div);
+
+// div.innerHTML = '<h1>Hello World!</h1>';
+// div.textContent = '<h1>Hello World!</h1>';
+
+document.body.insertBefore(div, circle[0]);
+document.body.removeChild(circle[1]);
+wrapper.removeChild(heart[1]);
+
+document.body.replaceChild(btn[1], circle[1]) // заменить элемент
 
 
 
 
 
-    // (num == 50) ? console.log('Right!') : console.log('Wrong!');
 
-    // switch (num) {
-    //     case num < 49:
-    //         console.log('!');
-    //         break;
-    //     case num > 100:
-    //         console.log("!");
-    //         break;
-    //     case 50:
-    //         console.log("right!");
-    //         break;
-    //     default: 
-    //         console.log("Что то пошло не так!");
-    //         break;
-    // }
 
-    // let num = 50;
 
-    // while (num < 55) {
-    //     console.log(num);
-    //     num++;
-    // }
 
-    // do {
-    //     console.log(num);
-    //     num++;
-    // } while (num < 55)
 
-    // for (let i = 0; i < 10; i++) {
-    //     num++;
 
-    //     if (i == 6) {
-    //         continue
-    //     }
 
-    //     console.log(i);
-    // }
+
+
+
+function log(c) {
+    console.log(c);
+}
+
+// let money = prompt("Ваш бюджет на месяц?"),
+//     timeData = prompt("Введите дату в формате YYYY-MM-DD"),
+//     a = prompt("Введите обязательную статью расходов в этом месяце"),
+//     b = prompt("Во сколько обойдется?");
+
+// let appData = {
+//     money: money,
+//     timeData: timeData,
+//     expenses: {
+//         a: a,
+//         b: b
+//     },
+//     optionalExpenses: {},
+//     income: [],
+//     savings: false
+// }
+
+// alert(appData.money/30);
+
+
+
+
+
+
+
+
+// (num == 50) ? console.log('Right!') : console.log('Wrong!');
+
+// switch (num) {
+//     case num < 49:
+//         console.log('!');
+//         break;
+//     case num > 100:
+//         console.log("!");
+//         break;
+//     case 50:
+//         console.log("right!");
+//         break;
+//     default: 
+//         console.log("Что то пошло не так!");
+//         break;
+// }
+
+// let num = 50;
+
+// while (num < 55) {
+//     console.log(num);
+//     num++;
+// }
+
+// do {
+//     console.log(num);
+//     num++;
+// } while (num < 55)
+
+// for (let i = 0; i < 10; i++) {
+//     num++;
+
+//     if (i == 6) {
+//         continue
+//     }
+
+//     console.log(i);
+// }
 
 
 
@@ -151,24 +229,6 @@
 
 
 
-
-// function createCounter() {
-//   let counter = 0
-//   const myFunction = function() {
-//     counter = counter + 1
-//     return counter
-//   }
-//   return myFunction
-// }
-// const increment = createCounter()
-// const c1 = increment()
-// const c2 = increment()
-// const c3 = increment()
-// console.log('example increment', c1, c2, c3);
-
-
-
-
 // function Counter() {
 //     let count = 0;
     
@@ -180,13 +240,11 @@
 // }
 
 // let counter = Counter();
-
 // console.log(counter()); // 1
 // console.log(counter()); // 2
 // console.log(counter()); // 3
 
 // let anotherCounter = Counter();
-
 // console.log(anotherCounter()); // 1
 // console.log(anotherCounter()); // 2
 // console.log(anotherCounter()); // 3
@@ -211,7 +269,6 @@
 
 
 
-
 // function urlGenerator(domain) {
 //     return function(url) {
 //         return `https://${url}.${domain}`
@@ -229,7 +286,6 @@
 
 
 
-
 // function bind(cont1) {
 //     function logPerson() {
 //       console.log(`person: ${cont1.name}, ${cont1.age}, ${cont1.job}`); 
@@ -242,7 +298,6 @@
 
 // bind(person1);
 // bind(person2);
-
 
 
 
@@ -324,7 +379,7 @@
 
 
 
-// массивы и псевдомассивы ----------------------
+// массивы и псевдомассивы ----------------------------
 // let arr = ["first",2,3,"four",5];
 
 // arr.pop();          //удалить  с конца
@@ -336,13 +391,12 @@
 //     console.log(arr[i]);
 // }
 
-// forEach принимает 3 аргумента item - каждый элемент, i - номер, mass - массив
+// forEach принимает 3 аргумента, item - каждый элемент, i - номер, mass - весь массив
 // arr.forEach(function(item, index, array) {
 //     console.log(index + ": " + item + " (массив: " + array + ")");
 // });
 
 // console.log(arr);
-
 
 
 // возвращает массив
@@ -367,7 +421,7 @@
 
 // возвращает строку с разделителем ", "   arr2.join(',')
 // let arr2 = ["aawe", 'we', 'ewr', 'awer', 'adf'],
-//     i = arr2.join(',');
+//     i = arr2.join('-');
 
 // console.log(i);
 
@@ -394,11 +448,11 @@
 //     i;
 
 
-//     arr = anw.split(",");
-//     console.log(arr);
+    // arr = anw.split(",");
+    // console.log(arr);
 
-//     i = arr.join("\n");
-//     console.log(i)
+    // i = arr.join(",");
+    // console.log(i)
 
     // i = arr.sort();
     // console.log(i)
@@ -423,6 +477,52 @@
 
 // console.log(john);
 // console.log(john.armor);
+
+
+
+
+// 17  Динамическая типизация в JS  ------------------------------------
+// - to String
+// 1)
+// log(typeof(String(4)));
+
+// 2)
+// log("ww" + 5);
+// log(typeof("q" + 5));
+// log("https://vk.com/catalog/" + 5);
+
+
+// - to Number
+// 1)
+// log(typeof(Number("5")));
+
+// 2)
+// log(typeof(+'5'));
+
+// 3)
+// log(typeof(parseInt("15px", 10)));
+
+// let ans = +prompt("Hello?", "");
+
+// false: 0,  '',  null,  undefined, NaN
+
+
+// 4)
+// log(typeof(Boolean("5")));
+
+// 5)
+// log(typeof(!!"5"))
+
+
+
+
+
+
+
+
+
+
+
 
 
 
