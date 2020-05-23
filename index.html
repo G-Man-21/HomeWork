@@ -8,7 +8,11 @@
 </head>
 <body>
     
-<div class="box" id="box"></div>
+
+
+
+<!-- ПОЛУЧЕНИЕ ЭЛЕМЕНТОВ СО СТРАНИЦЫ DOM  135 -->
+<!-- <div class="box" id="box"></div>
 <button>1</button>
 <button>2</button>
 <button>3</button>
@@ -23,27 +27,42 @@
     <div class="heart"></div>
     <div class="heart"></div>
     <div class="heart"></div>
+</div> -->
+
+
+
+
+<!-- // СОБЫТИЯ И ИХ ОБРАБОТЧИК 136  ---------------------------------- -->
+<div class="wrapper">
+    <button class="btn">Нажми меня</button>
 </div>
+<button>Нажми на меня</button>
+<button>Нажми на меня</button>
+
+
+<a href="https://www.youtube.com/">https://www.youtube.com/</a>
+
+
     
 
-<script>
+<script src="main.js">
 
-//  ПОЛУЧЕНИЕ ЭЛЕМЕНТОВ СО СТРАНИЦЫ DOM    --------------------------------
-let box = document.getElementById('box'),
-    btn = document.getElementsByTagName('button'),
-    circle = document.getElementsByClassName('circle'),
-    heart = document.querySelectorAll('.heart'),
-    oneHeart = document.querySelector('.heart'),
-    wrapper = document.querySelector('.wrapper');
+//  ПОЛУЧЕНИЕ ЭЛЕМЕНТОВ СО СТРАНИЦЫ DOM   135 --------------------------------
+// let box = document.getElementById('box'),
+//     btn = document.getElementsByTagName('button'),
+//     circle = document.getElementsByClassName('circle'),
+//     heart = document.querySelectorAll('.heart'),
+//     oneHeart = document.querySelector('.heart'),
+//     wrapper = document.querySelector('.wrapper');
 
 
 
-box.style.backgroundColor = 'blue';
-btn[1].style.borderRadius = '100%';
+// box.style.backgroundColor = 'blue';
+// btn[1].style.borderRadius = '100%';
 
-circle[0].style.backgroundColor = 'red';
-circle[1].style.backgroundColor = 'yellow';
-circle[2].style.backgroundColor = 'green';
+// circle[0].style.backgroundColor = 'red';
+// circle[1].style.backgroundColor = 'yellow';
+// circle[2].style.backgroundColor = 'green';
 
 // for (let i = 0; i < heart.length; i++) {
 //     heart[i].style.backgroundColor = 'blue';
@@ -53,10 +72,10 @@ circle[2].style.backgroundColor = 'green';
 //     item.style.backgroundColor = 'blue';
 // });
 
-let div = document.createElement('div'),
-    text = document.createTextNode('Тут был я');
+// let div = document.createElement('div'),
+//     text = document.createTextNode('Тут был я');
 
-div.classList.add('black');
+// div.classList.add('black');
 
 // document.body.appendChild(div);   // добавить элемент в конец /body
 // wrapper.appendChild(div);
@@ -64,12 +83,11 @@ div.classList.add('black');
 // div.innerHTML = '<h1>Hello World!</h1>';
 // div.textContent = '<h1>Hello World!</h1>';
 
-document.body.insertBefore(div, circle[0]);
-document.body.removeChild(circle[1]);
-wrapper.removeChild(heart[1]);
+// document.body.insertBefore(div, circle[0]);
+// document.body.removeChild(circle[1]);
+// wrapper.removeChild(heart[1]);
 
-document.body.replaceChild(btn[1], circle[1]) // заменить элемент
-
+// document.body.replaceChild(btn[1], circle[1]) // заменить элемент
 
 
 
